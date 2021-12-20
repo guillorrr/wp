@@ -8,6 +8,6 @@ DOMAIN=$(echo "$DOMAIN")
 
 mkcert -install "${DOMAIN}"
 
-mkdir -p ../certs
+mkdir -p nginx/certs
 
-find . -type f -name "*.pem" -exec mv {} ../certs \;
+find . -type f -name "*.pem" -exec mv {} nginx/certs \;

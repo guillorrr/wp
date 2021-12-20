@@ -1,4 +1,4 @@
-FROM urre/wordpress-nginx-docker-compose-image
+FROM wordpress:5-php7.4-fpm
 
 # Install wp-cli
 RUN apt-get update && apt-get install -y sudo less mariadb-client
