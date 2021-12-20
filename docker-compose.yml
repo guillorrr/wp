@@ -40,6 +40,7 @@ services:
       - ./src:/var/www/html:rw,cached
       - ./config/php.ini:/usr/local/etc/php/conf.d/php.ini
       - ./config/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+      - ./xdebug:/tmp/xdebug
       - /etc/localtime:/etc/localtime:ro
     depends_on:
       - mysql

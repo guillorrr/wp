@@ -1,5 +1,9 @@
 FROM wordpress:5-php7.4-fpm
 
+# Install xdebug
+RUN pecl install xdebug-2.9.8 && docker-php-ext-enable xdebug
+RUN usermod -u 1000 www-data && groupmod -o -g 1000 www-data
+
 # Install wp-cli
 RUN apt-get update && apt-get install -y sudo less mariadb-client
 RUN curl -o /bin/wp-cli.phar https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
